@@ -1,29 +1,46 @@
 Final Project Milestone
 ==============================
 
-Project Title: <TODO>
-Your Name: <TODO>
+Project Title: Ernährungstagebuch  
+Your Name: Khaled Aldali
 
 Overview
 --------
-<TODO: Let me know how things are going. What have you explored, looked into, worked on, and tried so far? What do you have left to do? Are you running into any particular difficulties or blockers?>
+Ich habe das Grundgerüst vom Projekt schon gemacht. Die HTML- und CSS-Dateien sind fertig.
+Die Seite sieht einfach aus und ist leicht zu benutzen.
+Das Formular zum Eintragen von Mahlzeiten funktioniert.
+Das JavaScript zeigt die alten Einträge an und speichert neue – ein paar Dinge muss ich noch verbessern.
+Die Verbindung zum Server (API mit Express) funktioniert. Man kann Daten holen und neue senden.
 
 Project Changes
 ---------------
-<TODO: If you are planning to change something about your project (scope, features, etc.) from your proposal, please let me know what changes you're planning to make.>
+Ich habe fast nichts am Plan (Proposal) geändert.
+Ich wollte die App einfach halten. Deshalb benutze ich keine Datenbank, sondern speichere alles in einer JSON-Datei.
 
 Implementation Details
 ----------------------
-<TODO: Describe how you will implement (or have implemented) a specific feature or part of the project. Include specific details about the frontend (e.g. what classes you'll have and how the user interface will work) and backend (e.g. what API endpoints you'll use and how you'll store the data). As with the proposal, this can change later; I just want to make sure you've thought through some of these details.>
+Frontend:  
+- Das HTML enthält ein Formular mit Feldern für Beschreibung, Kalorien und Kategorie.  
+- Die Ausgabe erfolgt in einem Container darunter.  
+- CSS sorgt für eine klare und übersichtliche Darstellung.
+
+Backend:  
+- Die API verarbeitet `GET /api/meals` und `POST /api/meals`.  
+- Die Daten werden in `data/meals.json` gespeichert.  
+- Es wird kein Datenbankserver verwendet, um die Anwendung einfach zu halten.
 
 External libraries and code
 ---------------------------
-<TODO: Identify any external libraries or code you are using or plan to use, and describe how it fits into your project. Please include everything even if you already listed it in your proposal.>
+- express  
+- body-parser  
+- cors  
+- fs (für Lesen/Schreiben von JSON-Dateien)  
+- socket.io (für automatisches Reloaden bei CSS-Änderungen)
 
 Collaboration and resources
 ---------------------------
-<TODO: Identify any sources you have consulted or plan to consult, except for code listed above. Include those you listed previously in your proposal.>
+Ich habe mir Einführungsvideos aus dem Unterricht angeschaut und auch Beispiele aus dem Internet verwendet.
 
 Anything else?
 --------------
-<TODO: Anything else you'd like me to know?>
+Ich plane, die App noch etwas schöner zu gestalten und evtl. Filter oder Löschfunktionen einzubauen.
