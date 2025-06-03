@@ -9,6 +9,7 @@
 </head>
 <body>
   <h1>Mein Ernährungstagebuch</h1>
+
   <form id="mealForm">
     <input type="text" id="description" placeholder="Mahlzeit eingeben" required>
     <input type="number" id="calories" placeholder="Kalorien" required>
@@ -20,7 +21,10 @@
     </select>
     <button type="submit">Hinzufügen</button>
   </form>
+
   <div id="entries"></div>
+  <h3>Gesamtkalorien: <span id="total-calories">0 kcal</span></h3>
+
   <script src="app.js"></script>
 </body>
 </html>
