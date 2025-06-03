@@ -1,4 +1,29 @@
-// TODO: If you need to initialize your database with some documents, uncomment/adjust these lines and add insert statements.
+// Verbindung zur MongoDB-Datenbank
+db = connect("mongodb+srv://khaleddali73:tKQNFVVhD9utDdNv@khaledaldali.obfagur.mongodb.net/ernaehrung");
 
-//db = connect(...);
-//db.dropDatabase();
+// Bestehende Datenbank löschen
+// db.dropDatabase();
+
+// Beispiel-Daten in die Sammlung "meals" einfügen
+db.meals.insertMany([
+  {
+    description: "Haferflocken mit Banane",
+    calories: 350,
+    category: "Frühstück"
+  },
+  {
+    description: "Gemüsepfanne mit Hähnchen",
+    calories: 500,
+    category: "Mittagessen"
+  },
+  {
+    description: "Vollkornbrot mit Avocado",
+    calories: 320,
+    category: "Abendessen"
+  },
+  {
+    description: "Joghurt mit Nüssen",
+    calories: 200,
+    category: "Snack"
+  }
+]);
