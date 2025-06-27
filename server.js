@@ -20,7 +20,7 @@ updater(server, publicPath);
 const main = async () => {
   await initApi(app);
   server.listen(PORT, () => {
-    console.log(`Server started. Now open http://localhost:${PORT}/ in your browser.`);
+    console.log(`Server started. Now open http://localhost:${1930}/ in your browser.`);
   });
 };
 main();
