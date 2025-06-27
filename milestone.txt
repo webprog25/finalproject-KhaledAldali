@@ -1,6 +1,3 @@
-Final Project Milestone
-==============================
-
 Project Title: Ernährungstagebuch  
 Your Name: Khaled Aldali
 
@@ -9,38 +6,38 @@ Overview
 Ich habe das Grundgerüst vom Projekt schon gemacht. Die HTML- und CSS-Dateien sind fertig.
 Die Seite sieht einfach aus und ist leicht zu benutzen.
 Das Formular zum Eintragen von Mahlzeiten funktioniert.
-Das JavaScript zeigt die alten Einträge an und speichert neue – ein paar Dinge muss ich noch verbessern.
-Die Verbindung zum Server (API mit Express) funktioniert. Man kann Daten holen und neue senden.
+Das JavaScript zeigt die alten Einträge an – das Absenden neuer Daten will ich noch verbessern.
+Die Verbindung zum Server (API mit Express) funktioniert. Man kann Daten abrufen, POST ist vorbereitet.
 
 Project Changes
 ---------------
 Ich habe fast nichts am Plan (Proposal) geändert.
-Ich wollte die App einfach halten. Deshalb benutze ich keine Datenbank, sondern speichere alles in einer JSON-Datei.
+Ich wollte die App einfach halten. Ursprünglich dachte ich an lokale JSON-Dateien, aber jetzt verwende ich MongoDB über einen Cloud-Dienst, weil das stabiler ist und besser funktioniert.
 
 Implementation Details
 ----------------------
 Frontend:  
 - Das HTML enthält ein Formular mit Feldern für Beschreibung, Kalorien und Kategorie.  
-- Die Ausgabe erfolgt in einem Container darunter.  
-- CSS sorgt für eine klare und übersichtliche Darstellung.
+- Die Einträge werden in einem Container angezeigt.  
+- CSS sorgt für eine einfache und übersichtliche Darstellung.
 
 Backend:  
 - Die API verarbeitet `GET /api/meals` und `POST /api/meals`.  
-- Die Daten werden in `data/meals.json` gespeichert.  
-- Es wird kein Datenbankserver verwendet, um die Anwendung einfach zu halten.
+- Die Daten werden in einer MongoDB-Datenbank gespeichert.  
+- Ich verwende Express als Framework.
 
 External libraries and code
 ---------------------------
 - express  
 - body-parser  
 - cors  
-- fs (für Lesen/Schreiben von JSON-Dateien)  
+- mongodb  
 - socket.io (für automatisches Reloaden bei CSS-Änderungen)
 
 Collaboration and resources
 ---------------------------
-Ich habe mir Einführungsvideos aus dem Unterricht angeschaut und auch Beispiele aus dem Internet verwendet.
+Ich habe mir Einführungsvideos aus dem Unterricht angeschaut und Beispiele aus den Übungen verwendet.
 
 Anything else?
 --------------
-Ich plane, die App noch etwas schöner zu gestalten und evtl. Filter oder Löschfunktionen einzubauen.
+Ich möchte das Absenden im Formular noch fertig machen und evtl. Filter oder Löschfunktionen einbauen.

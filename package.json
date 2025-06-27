@@ -1,8 +1,8 @@
 {
-  "name": "@webprog/project",
-  "version": "2025.spr",
-  "author": "Your Name <your@email>",
-  "description": "Webprog Final Project",
+  "name": "ernaehrungstagebuch",
+  "version": "1.0.0",
+  "author": "Khaled Aldali <khaled.aldali@stud.plus.ac.at>",
+  "description": "Ernährungstagebuch für Webprog-Finalprojekt SS2025",
   "license": "UNLICENSED",
   "private": true,
   "type": "module",

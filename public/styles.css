@@ -35,6 +35,14 @@ button:hover {
   background-color: #0056b3;
 }
 
+button.delete {
+  background-color: #dc3545;
+}
+
+button.delete:hover {
+  background-color: #b02a37;
+}
+
 #entries > div {
   margin-bottom: 12px;
   padding: 15px;
@@ -61,4 +69,22 @@ hr {
 
 strong {
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+
+  #entries {
+    max-width: 100%;
+  }
+
+  body {
+    margin: 20px;
+  }
 }
