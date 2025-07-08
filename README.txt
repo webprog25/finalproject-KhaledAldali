@@ -37,9 +37,9 @@ Collaboration and libraries
 Ich habe keine Zusammenarbeit mit anderen.  
 Ich habe mir Beispiele aus dem Unterricht angesehen und mich an den Vorlagen aus den Aufgaben orientiert.
 
-Manche Probleme beim Code (z. B. mit dem Formular oder API) habe ich mit Hilfe eines Buches gelöst:  
-"IT-Handbuch für Fachinformatiker*innen von Sascha Kersken".  
-Für die Verbindung zur MongoDB-Datenbank und beim Konfigurieren der Meise-Umgebung habe ich mir einmal Hilfe von einer KI geholt, weil es lokal nicht funktioniert hat.
+Manche Probleme beim Code (z. B. mit dem Formular oder der API) habe ich mit Hilfe eines Buches gelöst:  
+„IT-Handbuch für Fachinformatiker*innen“ von Sascha Kersken,  
+außerdem durch Videos im Internet und die Inhalte aus der UV.
 
 Verwendete Libraries:
 - express  
@@ -48,4 +48,3 @@ Verwendete Libraries:
 - cors  
 - socket.io  
 - nodemon
-
