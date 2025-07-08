@@ -1,10 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config();
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
 import { MongoClient } from "mongodb";
 import { ObjectId } from "mongodb";
 
-const MONGO_URI = "mongodb+srv://khaleddali73:tKQNFVVhD9utDdNv@khaledaldali.obfagur.mongodb.net/ernaehrung";
+const MONGO_URI = process.env.MONGO_URI;
 
 let api = express.Router();
 let meals;
@@ -14,10 +16,14 @@ const initApi = async (app) => {
   app.use("/api", api);
 
   // Verbindung zur MongoDB-Datenbank
-  const client = new MongoClient(MONGO_URI);
-  await client.connect();
-  const db = client.db("ernaehrung");
-  meals = db.collection("meals");
+  try {
+    const client = new MongoClient(MONGO_URI);
+    await client.connect();
+    const db = client.db("ernaehrung");
+    meals = db.collection("meals");
+  } catch (err) {
+    console.error("Fehler bei der Datenbankverbindung:", err);
+  }
 };
 
 api.use(bodyParser.json());
@@ -29,22 +35,34 @@ api.get("/", (req, res) => {
 
 // Alle Mahlzeiten abrufen
 api.get("/meals", async (req, res) => {
-  const data = await meals.find().toArray();
-  res.json(data);
+  try {
+    const data = await meals.find().toArray();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: "Fehler beim Abrufen der Mahlzeiten" });
+  }
 });
 
 // Neue Mahlzeit hinzufügen
 api.post("/meals", async (req, res) => {
-  const meal = req.body;
-  await meals.insertOne(meal);
-  res.status(201).json(meal);
+  try {
+    const meal = req.body;
+    await meals.insertOne(meal);
+    res.status(201).json(meal);
+  } catch (err) {
+    res.status(500).json({ error: "Fehler beim Hinzufügen der Mahlzeit" });
+  }
 });
 
 // Eine Mahlzeit löschen
 api.delete("/meals/:id", async (req, res) => {
-  const id = req.params.id;
-  await meals.deleteOne({ _id: new ObjectId(id) });
-  res.json({ success: true });
+  try {
+    const id = req.params.id;
+    await meals.deleteOne({ _id: new ObjectId(id) });
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: "Fehler beim Löschen der Mahlzeit" });
+  }
 });
 
 /* Catch-all route to return a JSON error if endpoint not defined.

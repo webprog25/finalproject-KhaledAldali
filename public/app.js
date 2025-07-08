@@ -1,3 +1,29 @@
+class Meal {
+  constructor({ description, calories, category, _id }) {
+    this.description = description;
+    this.calories = Number(calories);
+    this.category = category;
+    this.id = _id;
+  }
+
+  render(onDelete) {
+    const div = document.createElement("div");
+    div.textContent = `${this.description} – ${this.calories} kcal (${this.category})`;
+
+    const button = document.createElement("button");
+    button.textContent = "Löschen";
+    button.classList.add("delete");
+    button.style.marginLeft = "10px";
+
+    button.addEventListener("click", async () => {
+      await onDelete(this.id);
+    });
+
+    div.appendChild(button);
+    return div;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const entriesDiv = document.getElementById("entries");
   const totalCaloriesSpan = document.getElementById("total-calories");
@@ -10,25 +36,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let total = 0;
 
-    meals.forEach((meal) => {
-      const div = document.createElement("div");
-      div.textContent = `${meal.description} – ${meal.calories} kcal (${meal.category})`;
-
-      const button = document.createElement("button");
-      button.textContent = "Löschen";
-      button.classList.add("delete");
-      button.style.marginLeft = "10px";
-
-      button.addEventListener("click", async () => {
-        await fetch(`/api/meals/${meal._id}`, { method: "DELETE" });
+    for (let i = 0; i < meals.length; i++) {
+      const meal = new Meal(meals[i]);
+      const element = meal.render(async (id) => {
+        await fetch(`/api/meals/${id}`, { method: "DELETE" });
         await ladeEintraege();
       });
 
-      div.appendChild(button);
-      entriesDiv.appendChild(div);
-
-      total += Number(meal.calories);
-    });
+      entriesDiv.appendChild(element);
+      total += meal.calories;
+    }
 
     totalCaloriesSpan.textContent = `${total} kcal`;
   }
