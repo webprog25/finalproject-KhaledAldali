@@ -26,7 +26,9 @@
 
 - Super Arbeit Khaled, du hast das meiste sehr gut umgesetzt und mit einer einfachen Projektidee die meisten Anforderungen erfüllt.
 - Du hättest das CSS noch etwas mehr nutzen können, um die Seite ansprechender zu gestalten.
+- Deine Dokumentation ist sehr gut, Readme.txt usw. - auch die Commits sind sehr hilfreich zum Projektfortschritt beurteilen!
 - Bei der JavaScript Struktur hättest du noch eine weitere Klasse einbauen können, um die Übersichtlichkeit zu erhöhen.
 - Bei der Eventhandler Definition hättest du es so machen können, dass du den Eventhandler in der Klasse definierst und im Konstruktor mit `this.form.addEventListener('submit', this.handleSubmit.bind(this));` den Kontext bindest. So hättest du den Eventhandler direkt in der Klasse definiert und der Code wäre etwas übersichtlicher gewesen.
 -
 - <script src="app.js"></script> --> hättest du es mit type="module" eingebunden hättest du das DOMContentLoaded Event nicht gebraucht, da Module immer im Strict Mode laufen und somit erst nach dem Parsen des Dokuments ausgeführt
+
